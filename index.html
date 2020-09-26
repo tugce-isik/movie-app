@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <title>Movie App</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col-md-12 searchbox margin20">
+        <form action="">
+          <input
+            id="searchin"
+            class="col-md-8"
+            type="text"
+            placeholder="Start typing for search"
+            minlength="3"
+          />
+          <div class="col-md-1 float-left"></div>
+          <button class="col-md-3 float-right" type="submit" value="Search">
+            Search
+          </button>
+        </form>
+
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-md-12 margin20">
+        <div class="fontlarge">Search Result</div>
+        <ul class="search-result"></ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-md-12 margin20">
+        <div class="fontlarge">Favorites</div>
+        <ul class="favorites-result">
+          
+        </ul>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
