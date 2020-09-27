@@ -45,3 +45,12 @@ ul > li {
 .fontlarge {
   font-size: large;
 }
+
+.search-remove {
+  border: 1px solid #ededed;
+  padding: 0 7px;
+}
+
+ul.list-group li {
+  min-height: auto;
+}

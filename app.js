@@ -1,6 +1,17 @@
 $(document).ready(function () {
   $("#searchin").on("change keypress", function () {
     if ($("#searchin").val().length > 3) {
+      var word = $("#searchin").val();
+      $("ul.list-group").append(
+        "<li id=" +
+          word +
+          " class='col-sm-2 list-group-item'>" +
+          $("#searchin").val() +
+          " <div class='search-remove float-right'>x</div></li>"
+      );
+      $(".search-remove").click(function () {
+        $("ul.list-group li#"+word).remove();
+      });
       $.ajax({
         url: "http://www.omdbapi.com",
         method: "GET",
