@@ -10,7 +10,7 @@ $(document).ready(function () {
       }).done(function (data) {
         $("ul.search-result").html("");
         $.each(data.Search, function (key, val) {
-          console.log(val);
+          //console.log(val);
           $("ul.search-result").append(
             "<li class='col-md-3 float-left'><div> <img style='max-width:100%;' src='" +
               val.Poster +
@@ -20,38 +20,53 @@ $(document).ready(function () {
               val.Year +
               "</div> <div>Type: " +
               val.Type +
-              "</div> <div class='float-right like-img' id='slike'> <img src='image/like.png' /> </div> <div class='float-right heart-img' id='sheart' style='display:none; left:17px;'> <img src='image/heart.png' /> </div></div> </li>"
+              "</div> <div> imdbID: " +
+              val.imdbID +
+              "</div> <div class='float-right like-img' > <img src='image/like.png' id=" +
+              val.imdbID +
+              " /> </div> <div class='float-right heart-img' style='left:17px;'> <img style='display:none;' src='image/heart.png' id=" +
+              val.imdbID +
+              "s" +
+              " /> </div></div> </li>"
           );
+          $(".search-result #" + val.imdbID).click(function () {
+            $("#" + val.imdbID + "s").show();
+            if ($(".favorites-result #" + val.imdbID).length) {
+            } else {
+              $("ul.favorites-result").append(
+                "<li class='col-md-3 float-left' id=" +
+                  val.imdbID +
+                  "l" +
+                  " ><div> <img style='max-width:100%;' src='" +
+                  val.Poster +
+                  "'/> </div> <div>Title: " +
+                  val.Title +
+                  " </div> <div>Year: " +
+                  val.Year +
+                  "</div> <div>Type: " +
+                  val.Type +
+                  "</div> <div> imdbID: " +
+                  val.imdbID +
+                  "</div> <div class='float-right like-img' > <img src='image/like.png' id=" +
+                  val.imdbID +
+                  " /> </div> <div class='float-right heart-img' style='left:17px;'> <img src='image/heart.png' id=" +
+                  val.imdbID +
+                  "s" +
+                  " /> </div></div> </li>"
+              );
+            }
+            $(".favorites-result #" + val.imdbID + "s").click(function () {
+              $(this).hide();
+              $(".favorites-result #" + val.imdbID + "l").remove();
+              $(".search-result #" + val.imdbID + "s").hide();
+            });
+          });
+          $(".search-result #" + val.imdbID + "s").click(function () {
+            $(this).hide();
+            $(".favorites-result #" + val.imdbID + "l").remove();
+          });
         });
       });
     }
   });
-
-  $("ul.search-result #slike").click(function () {
-    $("ul.search-result #sheart").show();
-    /*$("ul.favorites-result").append(
-      "<li class='col-md-3 float-left'><div> <img style='max-width:100%;' src='" +
-        val.Poster +
-        "'/> </div> <div>Title: " +
-        val.Title +
-        " </div> <div>Year: " +
-        val.Year +
-        "</div> <div>Type: " +
-        val.Type +
-        "</div> <div class='float-right like-img' id='slike' style='display:none;'> <img src='image/like.png' /> </div> <div class='float-right heart-img' id='sheart' style='left:17px;'> <img src='image/heart.png' /> </div></div> </li>"
-    );*/
-  });
-
-
-
-  /* $(".heart-img").hide();
-  $(".like-img").click(function () {
-    $(".heart-img").show();
-    $(".heart-img").css("right", "19px");
-  });
-  $(".heart-img").click(function () {
-    $(".like-img").css("left", "-19px");
-    $(this).hide();
-    $(".like-img").show();
-  });*/
 });
