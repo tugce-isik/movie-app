@@ -22,9 +22,9 @@ $(document).ready(function () {
               val.Type +
               "</div> <div> imdbID: " +
               val.imdbID +
-              "</div> <div class='float-right like-img' > <img src='image/like.png' id=" +
+              "</div> <div class='float-right like-img' > <img src='like.png' id=" +
               val.imdbID +
-              " /> </div> <div class='float-right heart-img' style='left:17px;'> <img style='display:none;' src='image/heart.png' id=" +
+              " /> </div> <div class='float-right heart-img' style='left:17px;'> <img style='display:none;' src='heart.png' id=" +
               val.imdbID +
               "s" +
               " /> </div></div> </li>"
@@ -47,9 +47,9 @@ $(document).ready(function () {
                   val.Type +
                   "</div> <div> imdbID: " +
                   val.imdbID +
-                  "</div> <div class='float-right like-img' > <img src='image/like.png' id=" +
+                  "</div> <div class='float-right like-img' > <img src='like.png' id=" +
                   val.imdbID +
-                  " /> </div> <div class='float-right heart-img' style='left:17px;'> <img src='image/heart.png' id=" +
+                  " /> </div> <div class='float-right heart-img' style='left:17px;'> <img src='heart.png' id=" +
                   val.imdbID +
                   "s" +
                   " /> </div></div> </li>"
